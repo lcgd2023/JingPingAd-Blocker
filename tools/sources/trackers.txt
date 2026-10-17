@@ -1,0 +1,144 @@
+! ==========================================================================
+! 净屏 · 广告拦截 — 跟踪 / 统计规则
+! 这些域名普遍用于分析、埋点、会话录制、广告归因。
+! 屏蔽分析脚本一般不影响页面主要功能（个别站点会缺少统计图表）。
+! ==========================================================================
+
+! ---------------------------- 通用分析 / 埋点 ----------------------------
+||google-analytics.com^
+||ssl.google-analytics.com^
+! Google Ads 再营销 / 转化标记（gtag）
+||googletagmanager.com/gtag/js^$script
+||google-analytics.com/analytics.js^$script
+||static.cloudflareinsights.com^
+||amplitude.com^
+||mixpanel.com^
+||cdn.mxpnl.com^
+||segment.io^
+||segment.com^
+||heapanalytics.com^
+||hotjar.com^
+||hotjar.io^
+||fullstory.com^
+||mouseflow.com^
+||smartlook.com^
+||inspectlet.com^
+||luckyorange.com^
+||crazyegg.com^
+||clicktale.net^
+||sessioncam.com^
+||logrocket.com^$script
+||clarity.ms^
+||statcounter.com^
+||matomo.cloud^
+||kissmetrics.com^
+||heap.io^
+
+! ---------------------------- 广告验证 / 受众测量 ----------------------------
+||scorecardresearch.com^
+||comscore.com^
+||imrworldwide.com^
+||nielsen.com^$script
+||quantserve.com^
+||quantcount.com^
+||chartbeat.com^
+||parsely.com^
+||mrpfd.com^
+||narrative.io^
+||liveintent.com^
+||permutive.com^
+||lotame.com^
+||crwdcntrl.net^
+||teads.tv^
+||eyeota.net^
+||audigent.com^
+||1rx.io^
+||id5-sync.com^
+||adsymptotic.com^
+
+! ---------------------------- DMP / 数据同步 ----------------------------
+||demdex.net^
+||adobedc.net^
+||everesttech.net^
+||bluekai.com^
+||exelator.com^
+||krxd.net^
+||agkn.com^
+||rlcdn.com^
+||tapad.com^
+||mathtag.com^
+||addthis.com^
+||sharethis.com^
+||pubmatic.com^$image
+||casalemedia.com^$image
+||adnxs.com^$image
+||adsrvr.org^$image
+||criteo.com^$image
+
+! ---------------------------- 社交平台像素 ----------------------------
+||connect.facebook.net^
+||pixel.facebook.com^
+||facebook.com/tr^
+||static.ads-twitter.com^
+||analytics.twitter.com^
+||px.ads.linkedin.com^
+||snap.licdn.com^
+||ct.pinterest.com^
+||analytics.tiktok.com^
+||tr.snapchat.com^
+||sc-static.net^$image
+||bat.bing.com^
+||c.bing.com^
+||adsymptotic.com^$image
+||vk.com/rtrg^
+||top-fwz1.mail.ru^
+
+! ---------------------------- 归因 / 移动统计 ----------------------------
+||app-measurement.com^
+||appsflyer.com^
+||adjust.com^
+||branch.io^
+||kochava.com^
+||singular.net^
+||tenjin.io^
+||umeng.com^
+||umengcloud.com^
+||cnzz.com^
+||talkingdata.com^
+||talkingdata.net^
+||growingio.com^
+||sensorsdata.cn^
+||sensorsanalytics.com^
+||zhugeio.com^
+||jpush.cn^
+||getui.com^
+||igexin.com^
+
+! ---------------------------- 中国大陆统计 ----------------------------
+||hm.baidu.com^
+||tongji.baidu.com^
+||push.zhanzhang.baidu.com^
+||zhanzhang.baidu.com^$script
+||mmstat.com^
+||gm.mmstat.com^
+||mc.yandex.ru^
+||metrika.yandex.ru^
+||cnzz.com^
+||51.la^
+||51yes.com^
+||union.360.cn^$image
+||lingxi.163.com^
+||count.163.com^
+||analytics.163.com^
+||log.m.sm.cn^
+
+! ---------------------------- 营销自动化 / 邮件追踪 ----------------------------
+||pardot.com^
+||mktoresp.com^
+||marketo.com^$script
+||hs-analytics.net^
+||hsadspixel.net^
+||track.hubspot.com^
+||mailtrack.io^
+||mailchimp.com^$image
+||list-manage.com^$image

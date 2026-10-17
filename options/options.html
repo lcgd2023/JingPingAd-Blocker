@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title data-i18n="options_title">净屏 · 广告拦截 — 设置</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <img class="logo" src="../icons/icon48.png" alt="logo" width="40" height="40">
+      <div>
+        <h1 data-i18n="ext_name">净屏 · 广告拦截 (AdShield)</h1>
+        <p class="sub" id="version-line" data-i18n="options_autosave">设置会自动保存</p>
+      </div>
+      <span class="save-flag" id="save-flag" data-i18n="options_saved">已保存</span>
+    </header>
+
+    <div class="banner" id="welcome" hidden>
+      <strong data-i18n="options_welcome_title">安装完成 🎉</strong>
+      <span data-i18n="options_welcome_text">扩展已开始工作。下方可以调整拦截范围、维护白名单与自定义规则。</span>
+    </div>
+
+    <section class="panel">
+      <h2 data-i18n="options_sec_scope">拦截范围</h2>
+      <p class="panel-desc" data-i18n="options_scope_desc">请求级拦截由 Chrome 的声明式规则完成，不读取页面内容，速度快且省电。</p>
+
+      <label class="row">
+        <span class="row-main">
+          <span class="row-title" data-i18n="row_master">总开关</span>
+          <span class="row-desc" data-i18n="row_master_desc">关闭后所有网站都不再拦截（等价于全局暂停）</span>
+        </span>
+        <span class="switch"><input type="checkbox" id="enabled"><span class="slider"></span></span>
+      </label>
+
+      <label class="row">
+        <span class="row-main">
+          <span class="row-title"><span data-i18n="row_ads">广告网络</span> <em class="count" data-count="ads"></em></span>
+          <span class="row-desc" data-i18n="row_ads_desc">Google 广告、广告交易平台、原生广告（Taboola / Outbrain 等）</span>
+        </span>
+        <span class="switch"><input type="checkbox" id="blockAds"><span class="slider"></span></span>
+      </label>
+
+      <label class="row">
+        <span class="row-main">
+          <span class="row-title"><span data-i18n="row_trackers">跟踪与统计</span> <em class="count" data-count="trackers"></em></span>
+          <span class="row-desc" data-i18n="row_trackers_desc">分析、埋点、广告验证、会话录制等第三方脚本</span>
+        </span>
+        <span class="switch"><input type="checkbox" id="blockTrackers"><span class="slider"></span></span>
+      </label>
+
+      <label class="row">
+        <span class="row-main">
+          <span class="row-title"><span data-i18n="row_annoyances">弹窗推送与同意横幅</span> <em class="count" data-count="annoyances"></em></span>
+          <span class="row-desc" data-i18n="row_annoyances_desc">网页推送订阅、Cookie/GDPR 同意弹窗的后台请求（默认关闭）</span>
+        </span>
+        <span class="switch"><input type="checkbox" id="blockAnnoyances"><span class="slider"></span></span>
+      </label>
+
+      <label class="row">
+        <span class="row-main">
+          <span class="row-title"><span data-i18n="row_video">视频网站广告</span> <em class="count" data-count="video"></em></span>
+          <span class="row-desc">
+            <span data-i18n="row_video_desc">优酷 / 爱奇艺 / B 站等站点的广告接口</span>
+            <b class="warn" data-i18n="warn_playback">可能影响播放</b>
+          </span>
+        </span>
+        <span class="switch"><input type="checkbox" id="blockVideoAds"><span class="slider"></span></span>
+      </label>
+    </section>
+
+    <section class="panel">
+      <h2 data-i18n="options_sec_interstitial">插屏 / 弹窗广告</h2>
+      <p class="panel-desc" data-i18n="interstitial_desc">
+        针对「浏览过程中突然弹出的整屏广告」：Google 插屏（vignette / interstitial）、悬浮层、popunder 等。
+        拦截时会同时隐藏背后的灰色遮罩、去掉页面模糊并恢复滚动。
+      </p>
+
+      <label class="row">
+        <span class="row-main">
+          <span class="row-title" data-i18n="row_overlay">拦截插屏 / 悬浮 / 弹窗广告</span>
+          <span class="row-desc" data-i18n="row_overlay_desc">以 Google 广告标记与广告类名为依据，隐藏覆盖层容器</span>
+        </span>
+        <span class="switch"><input type="checkbox" id="killOverlayAds"><span class="slider"></span></span>
+      </label>
+
+      <label class="row">
+        <span class="row-main">
+          <span class="row-title" data-i18n="row_popup">拦截广告弹窗窗口</span>
+          <span class="row-desc" data-i18n="row_popup_desc">拦截脚本自动 window.open 出来的广告窗口，你主动点击产生的弹窗不受影响</span>
+        </span>
+        <span class="switch"><input type="checkbox" id="blockPopupWindows"><span class="slider"></span></span>
+      </label>
+    </section>
+
+    <section class="panel">
+      <h2 data-i18n="options_sec_cleanup">页面美化</h2>
+      <p class="panel-desc" data-i18n="cleanup_desc">元素隐藏由内容脚本在页面内实时执行，可随时开关并立即生效。</p>
+
+      <label class="row">
+        <span class="row-main">
+          <span class="row-title" data-i18n="row_hide">隐藏页面广告位</span>
+          <span class="row-desc" data-i18n="row_hide_desc">隐藏常见广告容器、广告 iframe 与空占位，减少页面留白</span>
+        </span>
+        <span class="switch"><input type="checkbox" id="hideAds"><span class="slider"></span></span>
+      </label>
+
+      <label class="row">
+        <span class="row-main">
+          <span class="row-title" data-i18n="row_sponsored">隐藏信息流推广内容</span>
+          <span class="row-desc" data-i18n="row_sponsored_desc">识别微博 / 知乎 / 抖音 / Facebook / X / Reddit 等平台的「赞助、推广」条目</span>
+        </span>
+        <span class="switch"><input type="checkbox" id="hideSponsored"><span class="slider"></span></span>
+      </label>
+
+      <label class="row">
+        <span class="row-main">
+          <span class="row-title" data-i18n="row_cookie">移除 Cookie / 遮罩弹窗</span>
+          <span class="row-desc" data-i18n="row_cookie_desc">隐藏 OneTrust、Cookiebot、Didomi 等同意弹窗并解除滚动锁定（可能影响个别站点）</span>
+        </span>
+        <span class="switch"><input type="checkbox" id="hideOverlays"><span class="slider"></span></span>
+      </label>
+
+      <label class="row">
+        <span class="row-main">
+          <span class="row-title" data-i18n="row_aggressive">强力模式</span>
+          <span class="row-desc">
+            <span data-i18n="row_aggressive_desc">启用更激进的选择器与悬浮广告清理</span>
+            <b class="warn" data-i18n="warn_misfire">可能误伤页面元素</b>
+          </span>
+        </span>
+        <span class="switch"><input type="checkbox" id="hideAggressive"><span class="slider"></span></span>
+      </label>
+
+      <label class="row">
+        <span class="row-main">
+          <span class="row-title" data-i18n="row_badge">在图标上显示拦截数量</span>
+          <span class="row-desc" data-i18n="row_badge_desc">关闭后不再显示数字角标</span>
+        </span>
+        <span class="switch"><input type="checkbox" id="showBadge"><span class="slider"></span></span>
+      </label>
+    </section>
+
+    <section class="panel">
+      <h2 data-i18n="options_sec_allowlist">网站白名单</h2>
+      <p class="panel-desc" data-i18n="allowlist_desc">每行一个域名，子域名会自动包含；白名单中的网站不做任何拦截与隐藏。</p>
+      <textarea id="allowlist" rows="6" spellcheck="false" placeholder="example.com&#10;news.example.org"></textarea>
+      <div class="hint-row">
+        <span id="allowlist-count" class="muted">0</span>
+        <span class="muted" data-i18n="allowlist_tip">也可以点击工具栏图标，在弹窗里一键暂停当前网站</span>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2 data-i18n="options_sec_rules">自定义规则</h2>
+      <p class="panel-desc" data-i18n="rules_desc">
+        每行一条，支持 Adblock 常用语法：
+      </p>
+      <ul class="syntax">
+        <li><code>||ads.example.com^</code> — <span data-i18n="syntax_domain">拦截该域名的请求</span></li>
+        <li><code>||ads.example.com^$script,image</code> — <span data-i18n="syntax_types">只拦截脚本与图片类型的请求</span></li>
+        <li><code>@@||example.com/ads.js</code> — <span data-i18n="syntax_allow">放行（例外）规则，优先级更高</span></li>
+        <li><code>##.ad-banner</code> — <span data-i18n="syntax_hide_all">隐藏所有网站中匹配该选择器的元素</span></li>
+        <li><code>example.com##div[id^="promo-"]</code> — <span data-i18n="syntax_hide_site">只在指定网站隐藏元素</span></li>
+        <li><code>example.com#@#.ad-banner</code> — <span data-i18n="syntax_unhide">取消隐藏（例外）</span></li>
+        <li><span data-i18n="syntax_comment">以 ! 开头的行是注释</span></li>
+      </ul>
+      <textarea id="userRules" rows="9" spellcheck="false" placeholder="||ads.example.com^&#10;example.com##.promo-slot"></textarea>
+      <div class="hint-row">
+        <span id="rules-count" class="muted">0</span>
+        <span id="rules-error" class="error"></span>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2 data-i18n="options_sec_data">数据与统计</h2>
+      <div class="stat-row">
+        <div class="stat-box">
+          <span class="stat-num" id="stat-today">0</span>
+          <span class="stat-label" data-i18n="stat_blocked">今日拦截</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num" id="stat-daily-date">—</span>
+          <span class="stat-label" data-i18n="stat_date">统计日期</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num" id="stat-network-support">—</span>
+          <span class="stat-label" data-i18n="stat_net">网络计数能力</span>
+        </div>
+      </div>
+      <div class="button-row">
+        <button type="button" class="btn" id="btn-reset-stats" data-i18n="btn_reset_stats">清零统计</button>
+        <button type="button" class="btn" id="btn-export" data-i18n="btn_export">导出设置</button>
+        <button type="button" class="btn" id="btn-import" data-i18n="btn_import">导入设置</button>
+        <button type="button" class="btn btn-danger" id="btn-reset-all" data-i18n="btn_reset_all">恢复默认设置</button>
+        <input type="file" id="import-file" accept="application/json" hidden>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span id="footer-note">净屏 · AdShield</span>
+    </footer>
+  </div>
+
+  <div class="toast" id="toast" hidden></div>
+
+  <script src="../src/shared/config.js"></script>
+  <script src="../src/shared/i18n.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

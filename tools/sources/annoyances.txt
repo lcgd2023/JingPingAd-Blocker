@@ -1,0 +1,69 @@
+! ==========================================================================
+! 净屏 · 广告拦截 — 弹窗推送 / 同意弹窗（默认关闭）
+! 开启后会拦截网页推送订阅弹窗、Cookie/GDPR 同意管理平台的后台请求。
+! 副作用：个别站点可能出现「务必同意后才能继续」的提示，此时可关闭该项
+!        或把该站点加入白名单。
+! ==========================================================================
+
+! ---------------------------- 网页推送 / 通知订阅 ----------------------------
+||pushcrew.com^
+||pushengage.com^
+||onesignal.com^
+||izooto.com^
+||webpushr.com^
+||cleverpush.com^
+||foxpush.com^
+||pushnami.net^
+||pushtango.com^
+||aimtell.com^
+||gravitec.net^
+||pushwoosh.com^
+||airship.com^
+||wonderpush.com^
+||vwo.com^$script
+||beeketing.com^
+||pushengage.net^
+
+! ---------------------------- 同意管理平台 (CMP) ----------------------------
+||onetrust.com^
+||cookielaw.org^
+||cookiebot.com^
+||consensu.org^
+||quantcast.mgr.consensu.org^
+||privacy-mgmt.com^
+||sp-prod.net^
+||sourcepoint.com^
+||trustarc.com^
+||iubenda.com^
+||usercentrics.eu^
+||didomi.io^
+||didomi.net^
+||civiccomputing.com^
+||evidon.com^
+||crownpeak.com^
+||osano.com^
+||termly.io^
+||cookieyes.com^
+||cookiehub.net^
+||klaro.org^
+||tarteaucitron.io^
+||borlabs.io^
+||pandectes.io^
+||shopify.privy.com^
+||transcend.io^
+
+! ---------------------------- 弹窗式营销 / 订阅推送 ----------------------------
+||privy.com^
+||justuno.com^
+||optinmonster.com^
+||sleeknote.com^
+||getsitecontrol.com^
+||wisepops.com^
+||popupmaker.com^
+||sumo.com^
+||sumome.com^
+||hellobar.com^
+||wisepops.net^
+||drip.com^$image
+||intercom.io^$image
+||tawk.to^$image

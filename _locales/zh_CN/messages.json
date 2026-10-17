@@ -1,0 +1,501 @@
+{
+  "ext_name": {
+    "message": "净屏 · 广告拦截 (AdShield)",
+    "description": "Extension name shown in the toolbar and the Web Store."
+  },
+  "ext_desc": {
+    "message": "拦截广告与跟踪请求、隐藏页面广告位、插屏与弹窗广告，支持自定义规则、网站白名单与拦截统计。",
+    "description": "Short extension description (max 132 characters)."
+  },
+
+  "popup_title": {
+    "message": "净屏 · 广告拦截",
+    "description": "Popup tab title."
+  },
+  "popup_hero": {
+    "message": "净屏广告拦截",
+    "description": "Popup header title."
+  },
+  "popup_loading": {
+    "message": "正在加载…",
+    "description": "Placeholder while state is loading."
+  },
+  "popup_master_toggle": {
+    "message": "总开关",
+    "description": "Tooltip of the master switch."
+  },
+  "popup_site_label": {
+    "message": "当前网站",
+    "description": "Label above the current site hostname."
+  },
+  "popup_site_toggle": {
+    "message": "在本站暂停/恢复拦截",
+    "description": "Tooltip of the per-site switch."
+  },
+  "popup_hint_on": {
+    "message": "拦截已开启",
+    "description": "Initial per-site hint text."
+  },
+  "popup_stat_requests": {
+    "message": "拦截请求",
+    "description": "Stat label: blocked network requests."
+  },
+  "popup_stat_hidden": {
+    "message": "隐藏广告位",
+    "description": "Stat label: hidden page elements."
+  },
+  "popup_stat_today": {
+    "message": "今日累计",
+    "description": "Stat label: total blocked today."
+  },
+  "popup_opt_ads": {
+    "message": "广告网络请求",
+    "description": "Toggle: block ad network requests."
+  },
+  "popup_opt_trackers": {
+    "message": "跟踪与统计脚本",
+    "description": "Toggle: block tracking requests."
+  },
+  "popup_opt_hide": {
+    "message": "页面广告位隐藏",
+    "description": "Toggle: hide page ad slots."
+  },
+  "popup_opt_overlay": {
+    "message": "插屏 / 弹窗广告",
+    "description": "Toggle: kill interstitial and overlay ads."
+  },
+  "popup_opt_sponsored": {
+    "message": "信息流「赞助/推广」",
+    "description": "Toggle: hide sponsored feed posts."
+  },
+  "popup_opt_popup": {
+    "message": "广告弹窗窗口",
+    "description": "Toggle: block ad pop-up windows."
+  },
+  "popup_rescan": {
+    "message": "重新扫描",
+    "description": "Button: rescan the current page."
+  },
+  "popup_reset": {
+    "message": "清零统计",
+    "description": "Button: reset counters."
+  },
+  "popup_all_settings": {
+    "message": "全部设置",
+    "description": "Button: open the options page."
+  },
+  "popup_foot_live": {
+    "message": "元素隐藏与规则更新即时生效",
+    "description": "Popup footnote (default)."
+  },
+  "popup_foot_net_limited": {
+    "message": "以「加载已解压的扩展程序」方式运行时才统计网络拦截数",
+    "description": "Popup footnote when declarativeNetRequestFeedback is unavailable."
+  },
+  "popup_foot_applied": {
+    "message": "规则与元素隐藏即时生效，无需刷新页面",
+    "description": "Popup footnote when network counting is available."
+  },
+  "popup_page_unsupported": {
+    "message": "不受支持的页面",
+    "description": "Shown instead of a hostname on restricted pages."
+  },
+  "popup_hint_builtin": {
+    "message": "浏览器内置页面无法拦截（chrome://、扩展商店等）",
+    "description": "Per-site hint on restricted pages."
+  },
+  "popup_hint_paused": {
+    "message": "本站已暂停拦截（可在「全部设置」中管理白名单）",
+    "description": "Per-site hint when the site is whitelisted."
+  },
+  "popup_hint_off": {
+    "message": "总开关已关闭，全部网站暂停拦截",
+    "description": "Per-site hint when the master switch is off."
+  },
+  "popup_hint_active": {
+    "message": "本站拦截中",
+    "description": "Per-site hint while blocking is active."
+  },
+  "popup_state_paused": {
+    "message": "已暂停拦截",
+    "description": "Summary line when blocking is paused."
+  },
+  "popup_state_done": {
+    "message": "本次已处理 $count$ 项广告内容",
+    "description": "Summary line: how many items were handled on this page.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "1,234"
+      }
+    }
+  },
+  "popup_state_none": {
+    "message": "暂无广告内容",
+    "description": "Summary line when nothing was blocked yet."
+  },
+  "popup_demo": {
+    "message": "演示模式：当前不是扩展环境，操作不会生效",
+    "description": "Popup footnote when the page is opened outside the extension."
+  },
+
+  "options_title": {
+    "message": "净屏 · 广告拦截 — 设置",
+    "description": "Options tab title."
+  },
+  "options_autosave": {
+    "message": "设置会自动保存",
+    "description": "Options subtitle."
+  },
+  "options_saved": {
+    "message": "已保存",
+    "description": "Save badge text."
+  },
+  "options_welcome_title": {
+    "message": "安装完成 🎉",
+    "description": "Welcome banner title."
+  },
+  "options_welcome_text": {
+    "message": "扩展已开始工作。下方可以调整拦截范围、维护白名单与自定义规则。",
+    "description": "Welcome banner body."
+  },
+  "options_sec_scope": {
+    "message": "拦截范围",
+    "description": "Section heading."
+  },
+  "options_scope_desc": {
+    "message": "请求级拦截由 Chrome 的声明式规则完成，不读取页面内容，速度快且省电。",
+    "description": "Section description."
+  },
+  "row_master": {
+    "message": "总开关",
+    "description": "Row title."
+  },
+  "row_master_desc": {
+    "message": "关闭后所有网站都不再拦截（等价于全局暂停）",
+    "description": "Row description."
+  },
+  "row_ads": {
+    "message": "广告网络",
+    "description": "Row title."
+  },
+  "row_ads_desc": {
+    "message": "Google 广告、广告交易平台、原生广告（Taboola / Outbrain 等）",
+    "description": "Row description."
+  },
+  "row_trackers": {
+    "message": "跟踪与统计",
+    "description": "Row title."
+  },
+  "row_trackers_desc": {
+    "message": "分析、埋点、广告验证、会话录制等第三方脚本",
+    "description": "Row description."
+  },
+  "row_annoyances": {
+    "message": "弹窗推送与同意横幅",
+    "description": "Row title."
+  },
+  "row_annoyances_desc": {
+    "message": "网页推送订阅、Cookie/GDPR 同意弹窗的后台请求（默认关闭）",
+    "description": "Row description."
+  },
+  "row_video": {
+    "message": "视频网站广告",
+    "description": "Row title."
+  },
+  "row_video_desc": {
+    "message": "优酷 / 爱奇艺 / B 站等站点的广告接口",
+    "description": "Row description."
+  },
+  "warn_playback": {
+    "message": "可能影响播放",
+    "description": "Inline warning in the video row."
+  },
+  "options_sec_interstitial": {
+    "message": "插屏 / 弹窗广告",
+    "description": "Section heading."
+  },
+  "interstitial_desc": {
+    "message": "针对「浏览过程中突然弹出的整屏广告」：Google 插屏（vignette / interstitial）、悬浮层、popunder 等。拦截时会同时隐藏背后的灰色遮罩、去掉页面模糊并恢复滚动。",
+    "description": "Section description."
+  },
+  "row_overlay": {
+    "message": "拦截插屏 / 悬浮 / 弹窗广告",
+    "description": "Row title."
+  },
+  "row_overlay_desc": {
+    "message": "以 Google 广告标记与广告类名为依据，隐藏覆盖层容器",
+    "description": "Row description."
+  },
+  "row_popup": {
+    "message": "拦截广告弹窗窗口",
+    "description": "Row title."
+  },
+  "row_popup_desc": {
+    "message": "拦截脚本自动 window.open 出来的广告窗口，你主动点击产生的弹窗不受影响",
+    "description": "Row description."
+  },
+  "options_sec_cleanup": {
+    "message": "页面美化",
+    "description": "Section heading."
+  },
+  "cleanup_desc": {
+    "message": "元素隐藏由内容脚本在页面内实时执行，可随时开关并立即生效。",
+    "description": "Section description."
+  },
+  "row_hide": {
+    "message": "隐藏页面广告位",
+    "description": "Row title."
+  },
+  "row_hide_desc": {
+    "message": "隐藏常见广告容器、广告 iframe 与空占位，减少页面留白",
+    "description": "Row description."
+  },
+  "row_sponsored": {
+    "message": "隐藏信息流推广内容",
+    "description": "Row title."
+  },
+  "row_sponsored_desc": {
+    "message": "识别微博 / 知乎 / 抖音 / Facebook / X / Reddit 等平台的「赞助、推广」条目",
+    "description": "Row description."
+  },
+  "row_cookie": {
+    "message": "移除 Cookie / 遮罩弹窗",
+    "description": "Row title."
+  },
+  "row_cookie_desc": {
+    "message": "隐藏 OneTrust、Cookiebot、Didomi 等同意弹窗并解除滚动锁定（可能影响个别站点）",
+    "description": "Row description."
+  },
+  "row_aggressive": {
+    "message": "强力模式",
+    "description": "Row title."
+  },
+  "row_aggressive_desc": {
+    "message": "启用更激进的选择器与悬浮广告清理",
+    "description": "Row description."
+  },
+  "warn_misfire": {
+    "message": "可能误伤页面元素",
+    "description": "Inline warning in the aggressive row."
+  },
+  "row_badge": {
+    "message": "在图标上显示拦截数量",
+    "description": "Row title."
+  },
+  "row_badge_desc": {
+    "message": "关闭后不再显示数字角标",
+    "description": "Row description."
+  },
+  "options_sec_allowlist": {
+    "message": "网站白名单",
+    "description": "Section heading."
+  },
+  "allowlist_desc": {
+    "message": "每行一个域名，子域名会自动包含；白名单中的网站不做任何拦截与隐藏。",
+    "description": "Section description."
+  },
+  "allowlist_count": {
+    "message": "$count$ 个域名",
+    "description": "How many domains are on the whitelist.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "allowlist_tip": {
+    "message": "也可以点击工具栏图标，在弹窗里一键暂停当前网站",
+    "description": "Hint below the whitelist textarea."
+  },
+  "options_sec_rules": {
+    "message": "自定义规则",
+    "description": "Section heading."
+  },
+  "rules_desc": {
+    "message": "每行一条，支持 Adblock 常用语法：",
+    "description": "Section description."
+  },
+  "syntax_domain": {
+    "message": "拦截该域名的请求",
+    "description": "Custom rule syntax example 1."
+  },
+  "syntax_types": {
+    "message": "只拦截脚本与图片类型的请求",
+    "description": "Custom rule syntax example 2."
+  },
+  "syntax_allow": {
+    "message": "放行（例外）规则，优先级更高",
+    "description": "Custom rule syntax example 3."
+  },
+  "syntax_hide_all": {
+    "message": "隐藏所有网站中匹配该选择器的元素",
+    "description": "Custom rule syntax example 4."
+  },
+  "syntax_hide_site": {
+    "message": "只在指定网站隐藏元素",
+    "description": "Custom rule syntax example 5."
+  },
+  "syntax_unhide": {
+    "message": "取消隐藏（例外）",
+    "description": "Custom rule syntax example 6."
+  },
+  "syntax_comment": {
+    "message": "以 ! 开头的行是注释",
+    "description": "Custom rule syntax example 7."
+  },
+  "rules_count": {
+    "message": "网络规则 $network$ 条 · 元素规则 $cosmetic$ 条",
+    "description": "Parsed custom rule counts.",
+    "placeholders": {
+      "network": {
+        "content": "$1",
+        "example": "2"
+      },
+      "cosmetic": {
+        "content": "$2",
+        "example": "1"
+      }
+    }
+  },
+  "rules_warn": {
+    "message": "部分规则语法无法识别，已忽略",
+    "description": "Warning shown when some custom rules could not be parsed."
+  },
+  "options_sec_data": {
+    "message": "数据与统计",
+    "description": "Section heading."
+  },
+  "stat_blocked": {
+    "message": "今日拦截",
+    "description": "Stat box label."
+  },
+  "stat_date": {
+    "message": "统计日期",
+    "description": "Stat box label."
+  },
+  "stat_net": {
+    "message": "网络计数能力",
+    "description": "Stat box label."
+  },
+  "stat_available": {
+    "message": "可用",
+    "description": "Network counting available."
+  },
+  "stat_limited": {
+    "message": "受限",
+    "description": "Network counting unavailable."
+  },
+  "btn_reset_stats": {
+    "message": "清零统计",
+    "description": "Button: reset stats."
+  },
+  "btn_export": {
+    "message": "导出设置",
+    "description": "Button: export settings."
+  },
+  "btn_import": {
+    "message": "导入设置",
+    "description": "Button: import settings."
+  },
+  "btn_reset_all": {
+    "message": "恢复默认设置",
+    "description": "Button: reset settings to defaults."
+  },
+  "count_rules": {
+    "message": "$count$ 条",
+    "description": "Rule count badge next to a rule set name.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "199"
+      }
+    }
+  },
+  "footer_enabled": {
+    "message": "净屏 · AdShield v$version$ — 网络计数已启用（需要扩展以开发模式加载）",
+    "description": "Options footer when network counting works.",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "1.3.0"
+      }
+    }
+  },
+  "footer_limited": {
+    "message": "净屏 · AdShield v$version$ — 网络计数不可用（缺少 declarativeNetRequestFeedback 权限）",
+    "description": "Options footer when network counting is unavailable.",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "1.3.0"
+      }
+    }
+  },
+  "version_line": {
+    "message": "所有修改即时保存并生效（v$version$）",
+    "description": "Options subtitle with the extension version.",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "1.3.0"
+      }
+    }
+  },
+  "version_demo": {
+    "message": "演示模式：当前不是扩展环境，修改不会保存",
+    "description": "Options subtitle when opened outside the extension."
+  },
+  "toast_saved": {
+    "message": "设置已保存",
+    "description": "Toast message."
+  },
+  "toast_demo": {
+    "message": "演示模式：操作未生效",
+    "description": "Toast message."
+  },
+  "toast_stats_reset": {
+    "message": "统计已清零",
+    "description": "Toast message."
+  },
+  "toast_exported": {
+    "message": "已导出设置文件",
+    "description": "Toast message."
+  },
+  "toast_imported": {
+    "message": "设置已导入",
+    "description": "Toast message."
+  },
+  "toast_import_failed": {
+    "message": "导入失败：文件格式不正确",
+    "description": "Toast message."
+  },
+  "confirm_reset": {
+    "message": "恢复默认设置？白名单与自定义规则会被清空。",
+    "description": "Confirmation dialog before resetting settings."
+  },
+  "toast_reset_done": {
+    "message": "已恢复默认设置",
+    "description": "Toast message."
+  },
+
+  "err_invalid_host": {
+    "message": "无效的域名",
+    "description": "Error passed to the popup when a hostname cannot be parsed."
+  },
+  "err_page_unavailable": {
+    "message": "当前页面无法访问（受限页面或尚未加载完成）",
+    "description": "Error passed to the popup when the content script cannot be reached."
+  },
+  "err_unknown_command": {
+    "message": "未知的指令：$command$",
+    "description": "Error for an unknown runtime message.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "foo-bar"
+      }
+    }
+  }
+}

@@ -1,0 +1,501 @@
+{
+  "ext_name": {
+    "message": "AdShield — Ad & Pop-up Blocker",
+    "description": "Extension name shown in the toolbar and the Web Store."
+  },
+  "ext_desc": {
+    "message": "Blocks ad and tracking requests, hides ad slots, interstitial and pop-up ads — with custom rules, a site whitelist and stats.",
+    "description": "Short extension description (max 132 characters)."
+  },
+
+  "popup_title": {
+    "message": "AdShield · Ad Blocker",
+    "description": "Popup tab title."
+  },
+  "popup_hero": {
+    "message": "AdShield Ad Blocker",
+    "description": "Popup header title."
+  },
+  "popup_loading": {
+    "message": "Loading…",
+    "description": "Placeholder while state is loading."
+  },
+  "popup_master_toggle": {
+    "message": "Master switch",
+    "description": "Tooltip of the master switch."
+  },
+  "popup_site_label": {
+    "message": "This site",
+    "description": "Label above the current site hostname."
+  },
+  "popup_site_toggle": {
+    "message": "Pause or resume blocking on this site",
+    "description": "Tooltip of the per-site switch."
+  },
+  "popup_hint_on": {
+    "message": "Blocking is on",
+    "description": "Initial per-site hint text."
+  },
+  "popup_stat_requests": {
+    "message": "Blocked requests",
+    "description": "Stat label: blocked network requests."
+  },
+  "popup_stat_hidden": {
+    "message": "Hidden ads",
+    "description": "Stat label: hidden page elements."
+  },
+  "popup_stat_today": {
+    "message": "Today",
+    "description": "Stat label: total blocked today."
+  },
+  "popup_opt_ads": {
+    "message": "Ad network requests",
+    "description": "Toggle: block ad network requests."
+  },
+  "popup_opt_trackers": {
+    "message": "Tracking & analytics",
+    "description": "Toggle: block tracking requests."
+  },
+  "popup_opt_hide": {
+    "message": "Hide page ad slots",
+    "description": "Toggle: hide page ad slots."
+  },
+  "popup_opt_overlay": {
+    "message": "Interstitial & pop-up ads",
+    "description": "Toggle: kill interstitial and overlay ads."
+  },
+  "popup_opt_sponsored": {
+    "message": "Sponsored feed posts",
+    "description": "Toggle: hide sponsored feed posts."
+  },
+  "popup_opt_popup": {
+    "message": "Ad pop-up windows",
+    "description": "Toggle: block ad pop-up windows."
+  },
+  "popup_rescan": {
+    "message": "Rescan",
+    "description": "Button: rescan the current page."
+  },
+  "popup_reset": {
+    "message": "Reset stats",
+    "description": "Button: reset counters."
+  },
+  "popup_all_settings": {
+    "message": "All settings",
+    "description": "Button: open the options page."
+  },
+  "popup_foot_live": {
+    "message": "Hiding and rule changes apply instantly",
+    "description": "Popup footnote (default)."
+  },
+  "popup_foot_net_limited": {
+    "message": "Network counts work only when the extension is loaded unpacked",
+    "description": "Popup footnote when declarativeNetRequestFeedback is unavailable."
+  },
+  "popup_foot_applied": {
+    "message": "Rules and hiding apply instantly — no need to reload the page",
+    "description": "Popup footnote when network counting is available."
+  },
+  "popup_page_unsupported": {
+    "message": "Unsupported page",
+    "description": "Shown instead of a hostname on restricted pages."
+  },
+  "popup_hint_builtin": {
+    "message": "Can't block on browser pages (chrome://, the Web Store, …)",
+    "description": "Per-site hint on restricted pages."
+  },
+  "popup_hint_paused": {
+    "message": "Blocking is paused here (manage the whitelist in All settings)",
+    "description": "Per-site hint when the site is whitelisted."
+  },
+  "popup_hint_off": {
+    "message": "Master switch is off — blocking is paused everywhere",
+    "description": "Per-site hint when the master switch is off."
+  },
+  "popup_hint_active": {
+    "message": "Blocking on this site",
+    "description": "Per-site hint while blocking is active."
+  },
+  "popup_state_paused": {
+    "message": "Blocking paused",
+    "description": "Summary line when blocking is paused."
+  },
+  "popup_state_done": {
+    "message": "Blocked $count$ items on this page",
+    "description": "Summary line: how many items were handled on this page.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "1,234"
+      }
+    }
+  },
+  "popup_state_none": {
+    "message": "No ads found yet",
+    "description": "Summary line when nothing was blocked yet."
+  },
+  "popup_demo": {
+    "message": "Demo mode: this is not an extension environment, actions have no effect",
+    "description": "Popup footnote when the page is opened outside the extension."
+  },
+
+  "options_title": {
+    "message": "AdShield — Settings",
+    "description": "Options tab title."
+  },
+  "options_autosave": {
+    "message": "Changes are saved automatically",
+    "description": "Options subtitle."
+  },
+  "options_saved": {
+    "message": "Saved",
+    "description": "Save badge text."
+  },
+  "options_welcome_title": {
+    "message": "You're all set 🎉",
+    "description": "Welcome banner title."
+  },
+  "options_welcome_text": {
+    "message": "The extension is running. Below you can tune what gets blocked, manage the whitelist and write custom rules.",
+    "description": "Welcome banner body."
+  },
+  "options_sec_scope": {
+    "message": "Blocking scope",
+    "description": "Section heading."
+  },
+  "options_scope_desc": {
+    "message": "Request blocking uses Chrome's declarative rules. It never reads page content, so it stays fast and battery friendly.",
+    "description": "Section description."
+  },
+  "row_master": {
+    "message": "Master switch",
+    "description": "Row title."
+  },
+  "row_master_desc": {
+    "message": "When off, blocking is paused on every site",
+    "description": "Row description."
+  },
+  "row_ads": {
+    "message": "Ad networks",
+    "description": "Row title."
+  },
+  "row_ads_desc": {
+    "message": "Google ads, ad exchanges and native ad networks (Taboola / Outbrain and others)",
+    "description": "Row description."
+  },
+  "row_trackers": {
+    "message": "Tracking & analytics",
+    "description": "Row title."
+  },
+  "row_trackers_desc": {
+    "message": "Third-party analytics, pixels, ad verification and session-recording scripts",
+    "description": "Row description."
+  },
+  "row_annoyances": {
+    "message": "Push prompts & consent banners",
+    "description": "Row title."
+  },
+  "row_annoyances_desc": {
+    "message": "Background requests for push subscriptions and Cookie/GDPR consent dialogs (off by default)",
+    "description": "Row description."
+  },
+  "row_video": {
+    "message": "Video site ads",
+    "description": "Row title."
+  },
+  "row_video_desc": {
+    "message": "Ad endpoints on Youku, iQIYI, Bilibili and similar sites",
+    "description": "Row description."
+  },
+  "warn_playback": {
+    "message": "may break playback",
+    "description": "Inline warning in the video row."
+  },
+  "options_sec_interstitial": {
+    "message": "Interstitial & pop-up ads",
+    "description": "Section heading."
+  },
+  "interstitial_desc": {
+    "message": "For full-screen ads that appear while you browse: Google vignettes and interstitials, floating layers, popunders and click-triggered side drawers. Blocking also removes the dim overlay, clears the page blur and restores scrolling.",
+    "description": "Section description."
+  },
+  "row_overlay": {
+    "message": "Block interstitial, floating and pop-up ads",
+    "description": "Row title."
+  },
+  "row_overlay_desc": {
+    "message": "Hides overlay containers found via Google ad markers and ad-related class names",
+    "description": "Row description."
+  },
+  "row_popup": {
+    "message": "Block ad pop-up windows",
+    "description": "Row title."
+  },
+  "row_popup_desc": {
+    "message": "Blocks ad windows opened by scripts through window.open — pop-ups you open yourself are untouched",
+    "description": "Row description."
+  },
+  "options_sec_cleanup": {
+    "message": "Page cleanup",
+    "description": "Section heading."
+  },
+  "cleanup_desc": {
+    "message": "Element hiding runs live inside the page, so every switch takes effect immediately.",
+    "description": "Section description."
+  },
+  "row_hide": {
+    "message": "Hide page ad slots",
+    "description": "Row title."
+  },
+  "row_hide_desc": {
+    "message": "Hides common ad containers, ad iframes and empty placeholders so pages do not keep big gaps",
+    "description": "Row description."
+  },
+  "row_sponsored": {
+    "message": "Hide sponsored feed posts",
+    "description": "Row title."
+  },
+  "row_sponsored_desc": {
+    "message": "Detects “sponsored / promoted” items on Weibo, Zhihu, Douyin, Facebook, X, Reddit and more",
+    "description": "Row description."
+  },
+  "row_cookie": {
+    "message": "Remove cookie & overlay dialogs",
+    "description": "Row title."
+  },
+  "row_cookie_desc": {
+    "message": "Hides OneTrust, Cookiebot, Didomi consent dialogs and unlocks scrolling (may affect a few sites)",
+    "description": "Row description."
+  },
+  "row_aggressive": {
+    "message": "Aggressive mode",
+    "description": "Row title."
+  },
+  "row_aggressive_desc": {
+    "message": "Turns on broader selectors and floating-ad heuristics",
+    "description": "Row description."
+  },
+  "warn_misfire": {
+    "message": "may hide elements it should not",
+    "description": "Inline warning in the aggressive row."
+  },
+  "row_badge": {
+    "message": "Show blocked count on the icon",
+    "description": "Row title."
+  },
+  "row_badge_desc": {
+    "message": "Turn off to hide the number badge",
+    "description": "Row description."
+  },
+  "options_sec_allowlist": {
+    "message": "Site whitelist",
+    "description": "Section heading."
+  },
+  "allowlist_desc": {
+    "message": "One domain per line; subdomains are included automatically. Whitelisted sites are never blocked or modified.",
+    "description": "Section description."
+  },
+  "allowlist_count": {
+    "message": "$count$ domains",
+    "description": "How many domains are on the whitelist.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "allowlist_tip": {
+    "message": "You can also pause the current site from the toolbar pop-up",
+    "description": "Hint below the whitelist textarea."
+  },
+  "options_sec_rules": {
+    "message": "Custom rules",
+    "description": "Section heading."
+  },
+  "rules_desc": {
+    "message": "One rule per line — the usual Adblock syntax is supported:",
+    "description": "Section description."
+  },
+  "syntax_domain": {
+    "message": "block requests to this domain",
+    "description": "Custom rule syntax example 1."
+  },
+  "syntax_types": {
+    "message": "block only script and image requests",
+    "description": "Custom rule syntax example 2."
+  },
+  "syntax_allow": {
+    "message": "exception (allow) rule — takes priority",
+    "description": "Custom rule syntax example 3."
+  },
+  "syntax_hide_all": {
+    "message": "hide matching elements on every site",
+    "description": "Custom rule syntax example 4."
+  },
+  "syntax_hide_site": {
+    "message": "hide matching elements only on the given site",
+    "description": "Custom rule syntax example 5."
+  },
+  "syntax_unhide": {
+    "message": "undo a hide rule (exception)",
+    "description": "Custom rule syntax example 6."
+  },
+  "syntax_comment": {
+    "message": "lines starting with ! are comments",
+    "description": "Custom rule syntax example 7."
+  },
+  "rules_count": {
+    "message": "$network$ network rules · $cosmetic$ element rules",
+    "description": "Parsed custom rule counts.",
+    "placeholders": {
+      "network": {
+        "content": "$1",
+        "example": "2"
+      },
+      "cosmetic": {
+        "content": "$2",
+        "example": "1"
+      }
+    }
+  },
+  "rules_warn": {
+    "message": "Some rules could not be parsed and were ignored",
+    "description": "Warning shown when some custom rules could not be parsed."
+  },
+  "options_sec_data": {
+    "message": "Data & stats",
+    "description": "Section heading."
+  },
+  "stat_blocked": {
+    "message": "Blocked today",
+    "description": "Stat box label."
+  },
+  "stat_date": {
+    "message": "Stats date",
+    "description": "Stat box label."
+  },
+  "stat_net": {
+    "message": "Network counting",
+    "description": "Stat box label."
+  },
+  "stat_available": {
+    "message": "Available",
+    "description": "Network counting available."
+  },
+  "stat_limited": {
+    "message": "Limited",
+    "description": "Network counting unavailable."
+  },
+  "btn_reset_stats": {
+    "message": "Reset stats",
+    "description": "Button: reset stats."
+  },
+  "btn_export": {
+    "message": "Export settings",
+    "description": "Button: export settings."
+  },
+  "btn_import": {
+    "message": "Import settings",
+    "description": "Button: import settings."
+  },
+  "btn_reset_all": {
+    "message": "Reset to defaults",
+    "description": "Button: reset settings to defaults."
+  },
+  "count_rules": {
+    "message": "$count$ rules",
+    "description": "Rule count badge next to a rule set name.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "199"
+      }
+    }
+  },
+  "footer_enabled": {
+    "message": "AdShield v$version$ — network counting enabled (extension loaded in developer mode)",
+    "description": "Options footer when network counting works.",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "1.3.0"
+      }
+    }
+  },
+  "footer_limited": {
+    "message": "AdShield v$version$ — network counting unavailable (no declarativeNetRequestFeedback permission)",
+    "description": "Options footer when network counting is unavailable.",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "1.3.0"
+      }
+    }
+  },
+  "version_line": {
+    "message": "All changes save and apply instantly (v$version$)",
+    "description": "Options subtitle with the extension version.",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "1.3.0"
+      }
+    }
+  },
+  "version_demo": {
+    "message": "Demo mode: this is not an extension environment, changes are not saved",
+    "description": "Options subtitle when opened outside the extension."
+  },
+  "toast_saved": {
+    "message": "Settings saved",
+    "description": "Toast message."
+  },
+  "toast_demo": {
+    "message": "Demo mode: nothing was changed",
+    "description": "Toast message."
+  },
+  "toast_stats_reset": {
+    "message": "Stats cleared",
+    "description": "Toast message."
+  },
+  "toast_exported": {
+    "message": "Settings file exported",
+    "description": "Toast message."
+  },
+  "toast_imported": {
+    "message": "Settings imported",
+    "description": "Toast message."
+  },
+  "toast_import_failed": {
+    "message": "Import failed: invalid file format",
+    "description": "Toast message."
+  },
+  "confirm_reset": {
+    "message": "Reset to defaults? The whitelist and custom rules will be cleared.",
+    "description": "Confirmation dialog before resetting settings."
+  },
+  "toast_reset_done": {
+    "message": "Defaults restored",
+    "description": "Toast message."
+  },
+
+  "err_invalid_host": {
+    "message": "Invalid domain",
+    "description": "Error passed to the popup when a hostname cannot be parsed."
+  },
+  "err_page_unavailable": {
+    "message": "This page cannot be reached (restricted page or not fully loaded)",
+    "description": "Error passed to the popup when the content script cannot be reached."
+  },
+  "err_unknown_command": {
+    "message": "Unknown command: $command$",
+    "description": "Error for an unknown runtime message.",
+    "placeholders": {
+      "command": {
+        "content": "$1",
+        "example": "foo-bar"
+      }
+    }
+  }
+}

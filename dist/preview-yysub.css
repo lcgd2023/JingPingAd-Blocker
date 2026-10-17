@@ -1,0 +1,409 @@
+/* 净屏 · 广告拦截 — 元素隐藏 CSS 预览（自动生成，请勿手工修改）
+ * 域名：yysub.cc
+* 选择器：405 条   生成命令：node tools/gen-css-preview.mjs yysub.cc dist\preview-yysub.css
+ */
+ins.adsbygoogle { display: none !important; }
+iframe[src*="doubleclick.net"] { display: none !important; }
+iframe[src*="googlesyndication.com"] { display: none !important; }
+iframe[src*="googleadservices.com"] { display: none !important; }
+iframe[src*="adservice.google"] { display: none !important; }
+iframe[id^="google_ads_iframe"] { display: none !important; }
+iframe[name^="google_ads_iframe"] { display: none !important; }
+iframe[id^="aswift_"] { display: none !important; }
+div[id^="google_ads_"] { display: none !important; }
+div[id^="div-gpt-ad"] { display: none !important; }
+div[id^="gpt-passback"] { display: none !important; }
+div[data-google-query-id] { display: none !important; }
+ins[data-ad-client] { display: none !important; }
+ins[data-ad-slot] { display: none !important; }
+img[src*="/pagead/"] { display: none !important; }
+img[src*="doubleclick.net"] { display: none !important; }
+img[src*="adservice.google.com"] { display: none !important; }
+link[href*="pagead2.googlesyndication.com"] { display: none !important; }
+[class*="advertisement"] { display: none !important; }
+[id*="advertisement"] { display: none !important; }
+[class^="ad-slot"] { display: none !important; }
+[class*=" ad-slot"] { display: none !important; }
+[class$="ad-slot"] { display: none !important; }
+[class*="-ad-slot"] { display: none !important; }
+[class*="_ad-slot"] { display: none !important; }
+[id^="ad-slot"] { display: none !important; }
+[id$="ad-slot"] { display: none !important; }
+[id*="-ad-slot"] { display: none !important; }
+[id*="_ad-slot"] { display: none !important; }
+[class^="ad-unit"] { display: none !important; }
+[class*=" ad-unit"] { display: none !important; }
+[class$="ad-unit"] { display: none !important; }
+[class*="-ad-unit"] { display: none !important; }
+[class*="_ad-unit"] { display: none !important; }
+[id^="ad-unit"] { display: none !important; }
+[id$="ad-unit"] { display: none !important; }
+[id*="-ad-unit"] { display: none !important; }
+[id*="_ad-unit"] { display: none !important; }
+[class^="ad-banner"] { display: none !important; }
+[class*=" ad-banner"] { display: none !important; }
+[class$="ad-banner"] { display: none !important; }
+[class*="-ad-banner"] { display: none !important; }
+[class*="_ad-banner"] { display: none !important; }
+[id^="ad-banner"] { display: none !important; }
+[id$="ad-banner"] { display: none !important; }
+[id*="-ad-banner"] { display: none !important; }
+[id*="_ad-banner"] { display: none !important; }
+[class^="ad-container"] { display: none !important; }
+[class*=" ad-container"] { display: none !important; }
+[class$="ad-container"] { display: none !important; }
+[class*="-ad-container"] { display: none !important; }
+[class*="_ad-container"] { display: none !important; }
+[id^="ad-container"] { display: none !important; }
+[id$="ad-container"] { display: none !important; }
+[id*="-ad-container"] { display: none !important; }
+[id*="_ad-container"] { display: none !important; }
+[class^="ad-placeholder"] { display: none !important; }
+[class*=" ad-placeholder"] { display: none !important; }
+[class$="ad-placeholder"] { display: none !important; }
+[class*="-ad-placeholder"] { display: none !important; }
+[class*="_ad-placeholder"] { display: none !important; }
+[id^="ad-placeholder"] { display: none !important; }
+[id$="ad-placeholder"] { display: none !important; }
+[id*="-ad-placeholder"] { display: none !important; }
+[id*="_ad-placeholder"] { display: none !important; }
+[class^="ad-billboard"] { display: none !important; }
+[class*=" ad-billboard"] { display: none !important; }
+[class$="ad-billboard"] { display: none !important; }
+[class*="-ad-billboard"] { display: none !important; }
+[class*="_ad-billboard"] { display: none !important; }
+[id^="ad-billboard"] { display: none !important; }
+[id$="ad-billboard"] { display: none !important; }
+[id*="-ad-billboard"] { display: none !important; }
+[id*="_ad-billboard"] { display: none !important; }
+[class^="ads-container"] { display: none !important; }
+[class*=" ads-container"] { display: none !important; }
+[class$="ads-container"] { display: none !important; }
+[class*="-ads-container"] { display: none !important; }
+[class*="_ads-container"] { display: none !important; }
+[id^="ads-container"] { display: none !important; }
+[id$="ads-container"] { display: none !important; }
+[id*="-ads-container"] { display: none !important; }
+[id*="_ads-container"] { display: none !important; }
+[class^="ads-wrapper"] { display: none !important; }
+[class*=" ads-wrapper"] { display: none !important; }
+[class$="ads-wrapper"] { display: none !important; }
+[class*="-ads-wrapper"] { display: none !important; }
+[class*="_ads-wrapper"] { display: none !important; }
+[id^="ads-wrapper"] { display: none !important; }
+[id$="ads-wrapper"] { display: none !important; }
+[id*="-ads-wrapper"] { display: none !important; }
+[id*="_ads-wrapper"] { display: none !important; }
+[class^="ads-box"] { display: none !important; }
+[class*=" ads-box"] { display: none !important; }
+[class$="ads-box"] { display: none !important; }
+[class*="-ads-box"] { display: none !important; }
+[class*="_ads-box"] { display: none !important; }
+[id^="ads-box"] { display: none !important; }
+[id$="ads-box"] { display: none !important; }
+[id*="-ads-box"] { display: none !important; }
+[id*="_ads-box"] { display: none !important; }
+[class^="banner-ad"] { display: none !important; }
+[class*=" banner-ad"] { display: none !important; }
+[class$="banner-ad"] { display: none !important; }
+[class*="-banner-ad"] { display: none !important; }
+[class*="_banner-ad"] { display: none !important; }
+[id^="banner-ad"] { display: none !important; }
+[id$="banner-ad"] { display: none !important; }
+[id*="-banner-ad"] { display: none !important; }
+[id*="_banner-ad"] { display: none !important; }
+[class^="leaderboard-ad"] { display: none !important; }
+[class*=" leaderboard-ad"] { display: none !important; }
+[class$="leaderboard-ad"] { display: none !important; }
+[class*="-leaderboard-ad"] { display: none !important; }
+[class*="_leaderboard-ad"] { display: none !important; }
+[id^="leaderboard-ad"] { display: none !important; }
+[id$="leaderboard-ad"] { display: none !important; }
+[id*="-leaderboard-ad"] { display: none !important; }
+[id*="_leaderboard-ad"] { display: none !important; }
+[class^="rect-ad"] { display: none !important; }
+[class*=" rect-ad"] { display: none !important; }
+[class$="rect-ad"] { display: none !important; }
+[class*="-rect-ad"] { display: none !important; }
+[class*="_rect-ad"] { display: none !important; }
+[id^="rect-ad"] { display: none !important; }
+[id$="rect-ad"] { display: none !important; }
+[id*="-rect-ad"] { display: none !important; }
+[id*="_rect-ad"] { display: none !important; }
+[data-testid*="ad-slot"] { display: none !important; }
+[data-testid*="advertisement"] { display: none !important; }
+[data-ad-slot] { display: none !important; }
+[data-ad-unit] { display: none !important; }
+[data-ad-client] { display: none !important; }
+[data-ad-position] { display: none !important; }
+[aria-label="Advertisement"] { display: none !important; }
+[aria-label="advertisement"] { display: none !important; }
+#ad_top { display: none !important; }
+.adTop { display: none !important; }
+.ad_top { display: none !important; }
+.top-ad { display: none !important; }
+.banner-ad { display: none !important; }
+.pop-ad { display: none !important; }
+.popup-ad { display: none !important; }
+.float-ad { display: none !important; }
+.ad-float { display: none !important; }
+.floatAd { display: none !important; }
+[class^="float-ad"] { display: none !important; }
+[class*=" float-ad"] { display: none !important; }
+[class$="float-ad"] { display: none !important; }
+[class*="-float-ad"] { display: none !important; }
+[class*="_float-ad"] { display: none !important; }
+[id^="float-ad"] { display: none !important; }
+[id$="float-ad"] { display: none !important; }
+[id*="-float-ad"] { display: none !important; }
+[id*="_float-ad"] { display: none !important; }
+[id^="ad_"] { display: none !important; }
+[id^="ads_"] { display: none !important; }
+[class^="ad_"] { display: none !important; }
+[class*=" ad_"] { display: none !important; }
+[class^="ads_"] { display: none !important; }
+[class*=" ads_"] { display: none !important; }
+[data-google-av-adk] { display: none !important; }
+[data-google-av-cxn] { display: none !important; }
+[data-google-av-metadata] { display: none !important; }
+[data-google-container-id] { display: none !important; }
+[data-google-query-id] { display: none !important; }
+.GoogleActiveViewElement { display: none !important; }
+.GoogleActiveViewClass { display: none !important; }
+.google-auto-placed { display: none !important; }
+ins[data-ad-format] { display: none !important; }
+iframe[src*="imasdk.googleapis.com"] { display: none !important; }
+iframe[src*="adtrafficquality.google"] { display: none !important; }
+div[id^="google_ads_iframe"] { display: none !important; }
+div[id^="aswift_"] { display: none !important; }
+img[src*="googlesyndication.com"] { display: none !important; }
+a[href^="https://googleads.g.doubleclick.net"] { display: none !important; }
+[data-ad-format="interstitial"] { display: none !important; }
+[data-ad-format="vignette"] { display: none !important; }
+#google_ads_interstitial { display: none !important; }
+[id^="google_ads_interstitial"] { display: none !important; }
+[id$="google_ads_interstitial"] { display: none !important; }
+[id*="-google_ads_interstitial"] { display: none !important; }
+[id*="_google_ads_interstitial"] { display: none !important; }
+[class^="google-vignette"] { display: none !important; }
+[class*=" google-vignette"] { display: none !important; }
+[class$="google-vignette"] { display: none !important; }
+[class*="-google-vignette"] { display: none !important; }
+[class*="_google-vignette"] { display: none !important; }
+[id^="google-vignette"] { display: none !important; }
+[id$="google-vignette"] { display: none !important; }
+[id*="-google-vignette"] { display: none !important; }
+[id*="_google-vignette"] { display: none !important; }
+.google-aiuf { display: none !important; }
+.goog-rentries { display: none !important; }
+.goog-rentry { display: none !important; }
+.google-anno-skip { display: none !important; }
+#google-anno-sa { display: none !important; }
+[id^="google-anno"] { display: none !important; }
+[class*="google-anno"] { display: none !important; }
+[id*="google-anno-"] { display: none !important; }
+[data-anchor-status] { display: none !important; }
+[class^="google-ad"] { display: none !important; }
+[class*=" google-ad"] { display: none !important; }
+[class$="google-ad"] { display: none !important; }
+[class*="-google-ad"] { display: none !important; }
+[class*="_google-ad"] { display: none !important; }
+[id^="google-ad"] { display: none !important; }
+[id$="google-ad"] { display: none !important; }
+[id*="-google-ad"] { display: none !important; }
+[id*="_google-ad"] { display: none !important; }
+[class^="google-ads"] { display: none !important; }
+[class*=" google-ads"] { display: none !important; }
+[class$="google-ads"] { display: none !important; }
+[class*="-google-ads"] { display: none !important; }
+[class*="_google-ads"] { display: none !important; }
+[id^="google-ads"] { display: none !important; }
+[id$="google-ads"] { display: none !important; }
+[id*="-google-ads"] { display: none !important; }
+[id*="_google-ads"] { display: none !important; }
+.ad_global { display: none !important; }
+.adsbygoogle-noablate { display: none !important; }
+[class^="interstitial-ad"] { display: none !important; }
+[class*=" interstitial-ad"] { display: none !important; }
+[class$="interstitial-ad"] { display: none !important; }
+[class*="-interstitial-ad"] { display: none !important; }
+[class*="_interstitial-ad"] { display: none !important; }
+[id^="interstitial-ad"] { display: none !important; }
+[id$="interstitial-ad"] { display: none !important; }
+[id*="-interstitial-ad"] { display: none !important; }
+[id*="_interstitial-ad"] { display: none !important; }
+[class^="interstitialAd"] { display: none !important; }
+[class*=" interstitialAd"] { display: none !important; }
+[class$="interstitialAd"] { display: none !important; }
+[class*="-interstitialAd"] { display: none !important; }
+[class*="_interstitialAd"] { display: none !important; }
+[id^="interstitialAd"] { display: none !important; }
+[id$="interstitialAd"] { display: none !important; }
+[id*="-interstitialAd"] { display: none !important; }
+[id*="_interstitialAd"] { display: none !important; }
+[class^="ad-interstitial"] { display: none !important; }
+[class*=" ad-interstitial"] { display: none !important; }
+[class$="ad-interstitial"] { display: none !important; }
+[class*="-ad-interstitial"] { display: none !important; }
+[class*="_ad-interstitial"] { display: none !important; }
+[id^="ad-interstitial"] { display: none !important; }
+[id$="ad-interstitial"] { display: none !important; }
+[id*="-ad-interstitial"] { display: none !important; }
+[id*="_ad-interstitial"] { display: none !important; }
+[class^="adInterstitial"] { display: none !important; }
+[class*=" adInterstitial"] { display: none !important; }
+[class$="adInterstitial"] { display: none !important; }
+[class*="-adInterstitial"] { display: none !important; }
+[class*="_adInterstitial"] { display: none !important; }
+[id^="adInterstitial"] { display: none !important; }
+[id$="adInterstitial"] { display: none !important; }
+[id*="-adInterstitial"] { display: none !important; }
+[id*="_adInterstitial"] { display: none !important; }
+[class^="popup-ad"] { display: none !important; }
+[class*=" popup-ad"] { display: none !important; }
+[class$="popup-ad"] { display: none !important; }
+[class*="-popup-ad"] { display: none !important; }
+[class*="_popup-ad"] { display: none !important; }
+[id^="popup-ad"] { display: none !important; }
+[id$="popup-ad"] { display: none !important; }
+[id*="-popup-ad"] { display: none !important; }
+[id*="_popup-ad"] { display: none !important; }
+[class^="popupAd"] { display: none !important; }
+[class*=" popupAd"] { display: none !important; }
+[class$="popupAd"] { display: none !important; }
+[class*="-popupAd"] { display: none !important; }
+[class*="_popupAd"] { display: none !important; }
+[id^="popupAd"] { display: none !important; }
+[id$="popupAd"] { display: none !important; }
+[id*="-popupAd"] { display: none !important; }
+[id*="_popupAd"] { display: none !important; }
+[class^="popup_ad"] { display: none !important; }
+[class*=" popup_ad"] { display: none !important; }
+[class$="popup_ad"] { display: none !important; }
+[class*="-popup_ad"] { display: none !important; }
+[class*="_popup_ad"] { display: none !important; }
+[id^="popup_ad"] { display: none !important; }
+[id$="popup_ad"] { display: none !important; }
+[id*="-popup_ad"] { display: none !important; }
+[id*="_popup_ad"] { display: none !important; }
+[class^="popunder"] { display: none !important; }
+[class*=" popunder"] { display: none !important; }
+[class$="popunder"] { display: none !important; }
+[class*="-popunder"] { display: none !important; }
+[class*="_popunder"] { display: none !important; }
+[id^="popunder"] { display: none !important; }
+[id$="popunder"] { display: none !important; }
+[id*="-popunder"] { display: none !important; }
+[id*="_popunder"] { display: none !important; }
+[class^="overlay-ad"] { display: none !important; }
+[class*=" overlay-ad"] { display: none !important; }
+[class$="overlay-ad"] { display: none !important; }
+[class*="-overlay-ad"] { display: none !important; }
+[class*="_overlay-ad"] { display: none !important; }
+[id^="overlay-ad"] { display: none !important; }
+[id$="overlay-ad"] { display: none !important; }
+[id*="-overlay-ad"] { display: none !important; }
+[id*="_overlay-ad"] { display: none !important; }
+[class^="ad-overlay"] { display: none !important; }
+[class*=" ad-overlay"] { display: none !important; }
+[class$="ad-overlay"] { display: none !important; }
+[class*="-ad-overlay"] { display: none !important; }
+[class*="_ad-overlay"] { display: none !important; }
+[id^="ad-overlay"] { display: none !important; }
+[id$="ad-overlay"] { display: none !important; }
+[id*="-ad-overlay"] { display: none !important; }
+[id*="_ad-overlay"] { display: none !important; }
+[class^="adOverlay"] { display: none !important; }
+[class*=" adOverlay"] { display: none !important; }
+[class$="adOverlay"] { display: none !important; }
+[class*="-adOverlay"] { display: none !important; }
+[class*="_adOverlay"] { display: none !important; }
+[id^="adOverlay"] { display: none !important; }
+[id$="adOverlay"] { display: none !important; }
+[id*="-adOverlay"] { display: none !important; }
+[id*="_adOverlay"] { display: none !important; }
+[class^="vignette"] { display: none !important; }
+[class*=" vignette"] { display: none !important; }
+[class$="vignette"] { display: none !important; }
+[class*="-vignette"] { display: none !important; }
+[class*="_vignette"] { display: none !important; }
+[id^="vignette"] { display: none !important; }
+[id$="vignette"] { display: none !important; }
+[id*="-vignette"] { display: none !important; }
+[id*="_vignette"] { display: none !important; }
+[class^="modal-ad"] { display: none !important; }
+[class*=" modal-ad"] { display: none !important; }
+[class$="modal-ad"] { display: none !important; }
+[class*="-modal-ad"] { display: none !important; }
+[class*="_modal-ad"] { display: none !important; }
+[id^="modal-ad"] { display: none !important; }
+[id$="modal-ad"] { display: none !important; }
+[id*="-modal-ad"] { display: none !important; }
+[id*="_modal-ad"] { display: none !important; }
+[class^="modalAd"] { display: none !important; }
+[class*=" modalAd"] { display: none !important; }
+[class$="modalAd"] { display: none !important; }
+[class*="-modalAd"] { display: none !important; }
+[class*="_modalAd"] { display: none !important; }
+[id^="modalAd"] { display: none !important; }
+[id$="modalAd"] { display: none !important; }
+[id*="-modalAd"] { display: none !important; }
+[id*="_modalAd"] { display: none !important; }
+[class^="fullscreen-ad"] { display: none !important; }
+[class*=" fullscreen-ad"] { display: none !important; }
+[class$="fullscreen-ad"] { display: none !important; }
+[class*="-fullscreen-ad"] { display: none !important; }
+[class*="_fullscreen-ad"] { display: none !important; }
+[id^="fullscreen-ad"] { display: none !important; }
+[id$="fullscreen-ad"] { display: none !important; }
+[id*="-fullscreen-ad"] { display: none !important; }
+[id*="_fullscreen-ad"] { display: none !important; }
+[class^="fullscreenAd"] { display: none !important; }
+[class*=" fullscreenAd"] { display: none !important; }
+[class$="fullscreenAd"] { display: none !important; }
+[class*="-fullscreenAd"] { display: none !important; }
+[class*="_fullscreenAd"] { display: none !important; }
+[id^="fullscreenAd"] { display: none !important; }
+[id$="fullscreenAd"] { display: none !important; }
+[id*="-fullscreenAd"] { display: none !important; }
+[id*="_fullscreenAd"] { display: none !important; }
+[class^="float-banner"] { display: none !important; }
+[class*=" float-banner"] { display: none !important; }
+[class$="float-banner"] { display: none !important; }
+[class*="-float-banner"] { display: none !important; }
+[class*="_float-banner"] { display: none !important; }
+[id^="float-banner"] { display: none !important; }
+[id$="float-banner"] { display: none !important; }
+[id*="-float-banner"] { display: none !important; }
+[id*="_float-banner"] { display: none !important; }
+[class^="floating-ad"] { display: none !important; }
+[class*=" floating-ad"] { display: none !important; }
+[class$="floating-ad"] { display: none !important; }
+[class*="-floating-ad"] { display: none !important; }
+[class*="_floating-ad"] { display: none !important; }
+[id^="floating-ad"] { display: none !important; }
+[id$="floating-ad"] { display: none !important; }
+[id*="-floating-ad"] { display: none !important; }
+[id*="_floating-ad"] { display: none !important; }
+[class^="floatAd"] { display: none !important; }
+[class*=" floatAd"] { display: none !important; }
+[class$="floatAd"] { display: none !important; }
+[class*="-floatAd"] { display: none !important; }
+[class*="_floatAd"] { display: none !important; }
+[id^="floatAd"] { display: none !important; }
+[id$="floatAd"] { display: none !important; }
+[id*="-floatAd"] { display: none !important; }
+[id*="_floatAd"] { display: none !important; }
+[class^="banner-popup"] { display: none !important; }
+[class*=" banner-popup"] { display: none !important; }
+[class$="banner-popup"] { display: none !important; }
+[class*="-banner-popup"] { display: none !important; }
+[class*="_banner-popup"] { display: none !important; }
+[id^="banner-popup"] { display: none !important; }
+[id$="banner-popup"] { display: none !important; }
+[id*="-banner-popup"] { display: none !important; }
+[id*="_banner-popup"] { display: none !important; }
+[aria-label="Advertisement"][role="dialog"] { display: none !important; }
+[data-ad-modal] { display: none !important; }
+[data-admode="interstitial"] { display: none !important; }
+[data-ads-modal] { display: none !important; }

@@ -1,0 +1,297 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>AdShield 元素隐藏测试</title>
+  <style>
+    body { font-family: "Microsoft YaHei", system-ui, sans-serif; margin: 20px; }
+    .box { padding: 8px; border: 1px dashed #bbb; margin: 4px 0; }
+    pre { background: #f5f5f5; padding: 12px; border-radius: 8px; font-size: 13px; }
+    .pass { color: #16a34a; }
+    .fail { color: #dc2626; font-weight: 700; }
+    .fake-page { filter: blur(6px); }
+    .overlay { position: fixed; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, .45); }
+    .overlay-ad { z-index: 9999; display: flex; align-items: center; justify-content: center; }
+    .ad-card { width: 320px; height: 240px; background: #fff; border-radius: 8px; padding: 12px; }
+  </style>
+</head>
+<body>
+  <h1>元素隐藏 + 插屏广告清理测试</h1>
+  <p id="status">等待内容脚本执行…</p>
+
+  <!-- 模拟“整页正文”，插屏广告出现时会被加上 blur -->
+  <div id="page-body">
+    <div id="page-content" class="fake-page">
+      <article class="box">这是一篇正常文章，广告清理后不应保持模糊。</article>
+      <main role="main" class="box">正文主体内容</main>
+    </div>
+
+    <!-- 广告样本（应被隐藏） -->
+    <ins class="adsbygoogle box" id="t1" data-ad-client="ca-pub-1">AdSense 广告</ins>
+    <iframe id="google_ads_iframe_1" class="box" src="about:blank" width="200" height="40"></iframe>
+    <div class="ad-banner box" id="t3">横幅广告</div>
+    <div data-ad-slot="123456" id="t4" class="box">data-ad-slot 广告</div>
+    <div id="div-gpt-ad-1" class="box">GPT 广告位</div>
+    <div class="advertisement box" id="t6">advertisement 区块</div>
+    <div id="t7" class="box" style="height:40px">用户自定义规则目标</div>
+
+    <!-- 广告位盒子：外层盒子必须一起隐藏，否则留下一大片空白 -->
+    <div class="ad_global" id="t8">
+      <ins class="adsbygoogle" id="t8-ins" data-ad-client="ca-pub-2">AdSense 广告</ins>
+    </div>
+    <div class="ad-global" id="t9">
+      <ins class="adsbygoogle" id="t9-ins" data-ad-client="ca-pub-3">AdSense 广告</ins>
+    </div>
+
+    <!-- 正常内容（必须保留） -->
+    <div class="content main" id="keep1">正常正文内容</div>
+    <article id="keep2" class="box">正常文章卡片</article>
+
+    <!-- 信息流赞助内容样本 -->
+    <div role="article" id="sponsored1" class="box">
+      <span>Sponsored</span>
+      <div>这是推广内容正文，应被整体隐藏。</div>
+      <div>更多内容</div>
+    </div>
+    <div role="article" id="keep3" class="box">
+      <span>张三 发布了动态</span>
+      <div>这是正常的动态内容，应保留。</div>
+      <div>更多内容</div>
+    </div>
+  </div>
+
+  <script src="../../src/shared/config.js?v=7"></script>
+  <script src="../../src/content/cosmetic.js?v=7"></script>
+  <script src="../../src/content/main-world.js?v=7"></script>
+  <script>
+    // 让「信息流赞助内容」识别逻辑也能在 localhost 上被测到
+    window.ADB.COSMETIC.sponsoredSites.push({
+      host: 'localhost',
+      container: 'div[role="article"]',
+      labels: 'span, a',
+      text: /^(sponsored|广告|推广)$/i
+    });
+    // 追加一条自定义元素规则（模拟设置里的用户规则）
+    window.ADB.COSMETIC.generic.push('#t7');
+  </script>
+  <script src="../../src/content/content.js?v=7"></script>
+  <script>
+    (function () {
+      /* ---------- ① Google 插屏广告（固定覆盖层 + 遮罩 + Google 标记） ---------- */
+      function buildGoogleInterstitial() {
+        const layer = document.createElement('div');
+        layer.id = 'g-interstitial';
+        layer.className = 'overlay overlay-ad';
+        layer.innerHTML =
+          '<div class="ad-card">' +
+          '<iframe id="google_ads_iframe_interstitial" width="300" height="200" data-google-container-id="7" src="about:blank"></iframe>' +
+          '<div data-google-av-adk="123" data-google-av-cxn="x">广告</div>' +
+          '</div>';
+        document.body.appendChild(layer);
+      }
+
+      /* ---------- ② 普通弹窗广告（广告类名 + 固定覆盖层 + 图片） ---------- */
+      function buildGenericPopupAd() {
+        const layer = document.createElement('div');
+        layer.id = 'popup-ad-slot';
+        layer.className = 'popup-ad-wrapper';
+        layer.style.cssText = 'position:fixed;left:50%;top:30%;transform:translateX(-50%);z-index:9000;background:#fff';
+        layer.innerHTML = '<img alt="ad" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" width="220" height="120">';
+        document.body.appendChild(layer);
+      }
+
+      /* ---------- ② 点击后从侧面滑出的抽屉广告 ---------- */
+      function buildSideDrawerAd() {
+        const drawer = document.createElement('div');
+        drawer.id = 'side-drawer-ad';
+        drawer.style.cssText = 'position:fixed;right:0;top:0;width:50%;height:100%;z-index:9500;background:#fff;box-shadow:0 0 20px rgba(0,0,0,.3)';
+        drawer.innerHTML = '<ins class="adsbygoogle" data-ad-client="ca-pub-9">' +
+          '<div id="aswift_9_host"><iframe id="aswift_9" width="300" height="250"></iframe></div></ins>' +
+          '<div class="google-aiuf"><span>体验AI智能工具</span></div>' +
+          '<button type="button">关闭</button>';
+        document.body.appendChild(drawer);
+      }
+
+      /* ---------- ③ 右下角悬浮「标注」广告（AdSense google-anno-sa） ---------- */
+      function buildAnnoBarAd() {
+        const bar = document.createElement('div');
+        bar.id = 'google-anno-sa';
+        bar.style.cssText = 'position:fixed;right:0;bottom:0;width:318px;height:50px;z-index:1000;background:#fff';
+        bar.innerHTML = '<div id="google-anno-sa-glow"><span>海外影视推荐 影视资讯平台 体验AI智能工具</span></div>';
+        document.documentElement.appendChild(bar);
+      }
+
+      /* ---------- ④ 必须保留的安全样本 ---------- */      // 登录弹窗：含表单与密码框，绝不能被隐藏
+      const loginModal = document.createElement('div');
+      loginModal.id = 'login-modal';
+      loginModal.style.cssText = 'position:fixed;left:0;top:0;width:100%;height:100%;z-index:8000;background:rgba(0,0,0,.5)';
+      loginModal.innerHTML = '<form><input type="password" name="pwd"><button>登录</button></form>';
+      document.body.appendChild(loginModal);
+
+      // 整页定位布局容器（含大量子元素），不能被隐藏
+      const appShell = document.createElement('div');
+      appShell.id = 'app-shell';
+      appShell.style.cssText = 'position:fixed;left:0;top:0;width:100%;height:100%;z-index:1;background:rgba(0,0,0,0)';
+      let children = '';
+      for (let i = 0; i < 200; i += 1) children += '<div class="cell">行 ' + i + '</div>';
+      appShell.innerHTML = children;
+      document.body.appendChild(appShell);
+
+      // 站点自带的弹窗（含表单）：必须保留，不能被当成广告覆盖层
+      const sitePopup = document.createElement('div');
+      sitePopup.id = 'keep4';
+      sitePopup.className = 'popup-box';
+      sitePopup.style.cssText = 'position:absolute;left:20px;top:20px;z-index:999;width:700px';
+      sitePopup.innerHTML = '<div class="popup-title"><h3>载入搜索到的下载链接</h3></div>' +
+        '<div class="popup-content"><form><input type="text" name="q"><button>搜索</button></form>' +
+        '<img alt="loading" src="data:image/gif;base64,R0lGODlhAQABAAAAACw="></div>';
+      document.body.appendChild(sitePopup);
+
+      function hidden(id) {
+        const el = document.getElementById(id);
+        return !el || getComputedStyle(el).display === 'none';
+      }
+
+      function run() {
+        buildGoogleInterstitial();
+        buildGenericPopupAd();
+        buildSideDrawerAd();
+        buildAnnoBarAd();
+
+        // 等清理器跑完（含 MutationObserver + 延迟扫描）
+        setTimeout(() => {
+          const expect = [
+            ['t1', true, 'ins.adsbygoogle'],
+            ['google_ads_iframe_1', true, 'iframe[id^="google_ads_iframe"]'],
+            ['t3', true, '.ad-banner'],
+            ['t4', true, '[data-ad-slot]'],
+            ['div-gpt-ad-1', true, 'div[id^="div-gpt-ad"]'],
+            ['t6', true, '[class*="advertisement"]'],
+            ['t7', true, '用户/自定义选择器'],
+            ['t8', true, '广告位盒子 .ad_global（CSS）'],
+            ['t9', true, '广告位盒子 .ad-global（JS 扩展隐藏）'],
+            ['sponsored1', true, '信息流 Sponsor 识别'],
+            ['g-interstitial', true, 'Google 插屏覆盖层'],
+            ['side-drawer-ad', true, '点击弹出的侧边抽屉广告'],
+            ['google-anno-sa', true, '右下角悬浮标注广告（AdSense anno）'],
+            ['popup-ad-slot', true, '弹窗广告层'],
+            ['keep1', false, '正常正文'],
+            ['keep2', false, '正常文章'],
+            ['keep3', false, '正常动态'],
+            ['keep4', false, '站点自带弹窗（含表单，安全）'],
+            ['login-modal', false, '登录弹窗（安全）'],
+            ['app-shell', false, '整页布局容器（安全）']
+          ];
+          const rows = [];
+          let failures = 0;
+          for (const [id, want, label] of expect) {
+            const actual = hidden(id);
+            const ok = actual === want;
+            if (!ok) failures += 1;
+            rows.push((ok ? '✔' : '✘') + ' ' + id.padEnd(22) + ' 期望' + (want ? '隐藏' : '保留') +
+              ' / 实际' + (actual ? '隐藏' : '保留') + '  ← ' + label);
+          }
+
+          const styleNode = document.getElementById('__adshield_cosmetic__');
+          const cssOk = !!styleNode && styleNode.textContent.indexOf('display: none') >= 0;
+          rows.push((cssOk ? '✔' : '✘') + ' 样式表已注入（#__adshield_cosmetic__）');
+          if (!cssOk) failures += 1;
+
+          const pageFilter = getComputedStyle(document.getElementById('page-content')).filter;
+          const blurCleared = pageFilter === 'none' || pageFilter === '';
+          rows.push((blurCleared ? '✔' : '✘') + ' 插屏广告后已清除页面模糊（filter: ' + pageFilter + '）');
+          if (!blurCleared) failures += 1;
+
+          // 点击拦截：点在广告元素上应被阻止，点普通内容不受影响
+          const clickBlocked = (function () {
+            const adEl = document.getElementById('t1');
+            const evt = new MouseEvent('click', { bubbles: true, cancelable: true });
+            let bubbled = false;
+            const onBubble = () => { bubbled = true; };
+            document.addEventListener('click', onBubble, false);
+            adEl.dispatchEvent(evt);
+            document.removeEventListener('click', onBubble, false);
+            return evt.defaultPrevented && !bubbled;
+          })();
+          rows.push((clickBlocked ? '✔' : '✘') + ' 点击广告元素被拦截（不会触发二次弹窗）');
+          if (!clickBlocked) failures += 1;
+
+          const wrapperClickBlocked = (function () {
+            const box = document.getElementById('t8');
+            const evt = new MouseEvent('click', { bubbles: true, cancelable: true });
+            let bubbled = false;
+            const onBubble = () => { bubbled = true; };
+            document.addEventListener('click', onBubble, false);
+            box.dispatchEvent(evt);
+            document.removeEventListener('click', onBubble, false);
+            return evt.defaultPrevented && !bubbled;
+          })();
+          rows.push((wrapperClickBlocked ? '✔' : '✘') + ' 点击广告位盒子被拦截（.ad_global）');
+          if (!wrapperClickBlocked) failures += 1;
+
+          const clickAllowed = (function () {
+            const el = document.getElementById('keep1');
+            const evt = new MouseEvent('click', { bubbles: true, cancelable: true });
+            let bubbled = false;
+            const onBubble = () => { bubbled = true; };
+            document.addEventListener('click', onBubble, false);
+            el.dispatchEvent(evt);
+            document.removeEventListener('click', onBubble, false);
+            return !evt.defaultPrevented && bubbled;
+          })();
+          rows.push((clickAllowed ? '✔' : '✘') + ' 点击普通内容不受影响');
+          if (!clickAllowed) failures += 1;
+
+          document.getElementById('status').innerHTML = failures
+            ? '<span class="fail">测试完成：' + failures + ' 项失败</span>'
+            : '<span class="pass">测试完成：全部通过</span>';
+          document.getElementById('out').textContent = rows.join('\n');
+          window.__ADB_TEST = { failures: failures, rows: rows, ok: failures === 0 };
+          document.title = failures ? 'AdShield 测试失败' : 'AdShield 测试通过';
+        }, 2600);
+      }
+
+      window.addEventListener('load', () => setTimeout(run, 600));
+    })();
+  </script>
+
+  <h2>结果</h2>
+  <pre id="out">—</pre>
+
+  <h2>弹窗拦截（需要真实点击）</h2>
+  <p>点击下面的按钮，验证「广告弹窗被拦、正常弹窗放行」。</p>
+  <p>
+    <button id="btn-ad-popup" type="button">打开广告弹窗 ad.example.com</button>
+    <button id="btn-legit-popup" type="button">打开正常弹窗 example.com</button>
+  </p>
+  <pre id="popup-out">等待点击…</pre>
+  <script>
+    (function () {
+      window.__ADB_POPUP_TEST = { adBlocked: null, legitOpened: null, notes: [] };
+      function note(text) {
+        window.__ADB_POPUP_TEST.notes.push(text);
+        document.getElementById('popup-out').textContent = window.__ADB_POPUP_TEST.notes.join('\n');
+      }
+      document.getElementById('btn-ad-popup').addEventListener('click', () => {
+        let result = null;
+        try {
+          result = window.open('https://ad.example.com/offer?from=popup', 'adshield_test_ad');
+        } catch (e) { /* ignore */ }
+        window.__ADB_POPUP_TEST.adBlocked = result === null;
+        note('广告弹窗 window.open => ' + (result === null ? '✔ 已拦截（返回 null）' : '✘ 未被拦截'));
+      });
+      document.getElementById('btn-legit-popup').addEventListener('click', () => {
+        let result = null;
+        try {
+          result = window.open('https://example.com/', 'adshield_test_legit', 'width=320,height=240');
+        } catch (e) { /* ignore */ }
+        window.__ADB_POPUP_TEST.legitOpened = !!result;
+        note('正常弹窗 window.open => ' + (result ? '✔ 已放行' : '✘ 被拦截（可能被浏览器自身拦截）'));
+        if (result) {
+          try { result.close(); } catch (e) { /* ignore */ }
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

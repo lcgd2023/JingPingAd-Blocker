@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title data-i18n="popup_title">净屏 · 广告拦截</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="hero">
+    <img class="logo" src="../icons/icon48.png" alt="logo" width="32" height="32">
+    <div class="hero-text">
+      <h1 data-i18n="popup_hero">净屏广告拦截</h1>
+      <p id="summary" data-i18n="popup_loading">正在加载…</p>
+    </div>
+    <label class="switch switch-lg" data-i18n-title="popup_master_toggle" title="总开关">
+      <input type="checkbox" id="global-toggle">
+      <span class="slider"></span>
+    </label>
+  </header>
+
+  <section class="card" id="site-card">
+    <div class="card-head">
+      <div class="site-info">
+        <span class="site-label" data-i18n="popup_site_label">当前网站</span>
+        <strong id="site-host">—</strong>
+      </div>
+      <label class="switch" data-i18n-title="popup_site_toggle" title="在本站暂停/恢复拦截">
+        <input type="checkbox" id="site-toggle">
+        <span class="slider"></span>
+      </label>
+    </div>
+    <p class="hint" id="site-hint" data-i18n="popup_hint_on">拦截已开启</p>
+  </section>
+
+  <section class="stats">
+    <div class="stat">
+      <span class="stat-value" id="stat-net">0</span>
+      <span class="stat-label" data-i18n="popup_stat_requests">拦截请求</span>
+    </div>
+    <div class="stat">
+      <span class="stat-value" id="stat-cos">0</span>
+      <span class="stat-label" data-i18n="popup_stat_hidden">隐藏广告位</span>
+    </div>
+    <div class="stat">
+      <span class="stat-value" id="stat-today">0</span>
+      <span class="stat-label" data-i18n="popup_stat_today">今日累计</span>
+    </div>
+  </section>
+
+  <section class="toggles">
+    <label class="row">
+      <span data-i18n="popup_opt_ads">广告网络请求</span>
+      <span class="switch"><input type="checkbox" id="opt-ads"><span class="slider"></span></span>
+    </label>
+    <label class="row">
+      <span data-i18n="popup_opt_trackers">跟踪与统计脚本</span>
+      <span class="switch"><input type="checkbox" id="opt-trackers"><span class="slider"></span></span>
+    </label>
+    <label class="row">
+      <span data-i18n="popup_opt_hide">页面广告位隐藏</span>
+      <span class="switch"><input type="checkbox" id="opt-hide"><span class="slider"></span></span>
+    </label>
+    <label class="row">
+      <span><span data-i18n="popup_opt_overlay">插屏 / 弹窗广告</span> <em class="tag">Google</em></span>
+      <span class="switch"><input type="checkbox" id="opt-overlay"><span class="slider"></span></span>
+    </label>
+    <label class="row">
+      <span data-i18n="popup_opt_sponsored">信息流「赞助/推广」</span>
+      <span class="switch"><input type="checkbox" id="opt-sponsored"><span class="slider"></span></span>
+    </label>
+    <label class="row">
+      <span data-i18n="popup_opt_popup">广告弹窗窗口</span>
+      <span class="switch"><input type="checkbox" id="opt-popup"><span class="slider"></span></span>
+    </label>
+  </section>
+
+  <footer class="actions">
+    <button type="button" id="btn-rescan" class="btn" data-i18n="popup_rescan">重新扫描</button>
+    <button type="button" id="btn-reset" class="btn" data-i18n="popup_reset">清零统计</button>
+    <button type="button" id="btn-options" class="btn btn-primary" data-i18n="popup_all_settings">全部设置</button>
+  </footer>
+
+  <p class="footnote" id="footnote" data-i18n="popup_foot_live">元素隐藏与规则更新即时生效</p>
+
+  <script src="../src/shared/config.js"></script>
+  <script src="../src/shared/i18n.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
